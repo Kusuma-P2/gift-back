@@ -1,0 +1,47 @@
+POST http://localhost:8000/product HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Explosion Box",
+    "image": "image12.jpg",
+    "cost": 300
+}
+
+
+###
+GET http://localhost:8000/product HTTP/1.1
+
+###
+POST http://localhost:8000/add_cart HTTP/1.1
+Content-Type: application/json
+
+{
+    "uid": "61332c2a48f8ae7e582a462c",
+    "products":{
+        "id": "613a05b9266d13313095a7d0",
+    "name": "Explosion Box",
+    "image": "image4.jpg",
+    "cost": 400,
+    "quantity": 1
+}
+}
+
+###
+POST http://localhost:8000/get_cart HTTP/1.1
+Content-Type: application/json
+
+{
+    "uid": "61332c2a48f8ae7e582a462c"
+}
+
+
+###
+POST http://localhost:8000/remove_cart HTTP/1.1
+Content-Type: application/json
+
+{
+    "uid": "61332c2a48f8ae7e582a462c",
+    "products":{
+        "_id": "613a0736266d13313095a7de"
+}
+}
